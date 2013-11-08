@@ -99,10 +99,10 @@ std::vector <std::string > countdown_solve ( double myints [], int target,int de
             if ( temp >= target - deviation && temp <= target + deviation)   //check between targets
             {
 
-                std::string temp;
+                std::string tempstr;
                 convert.str("");
                 convert << myints[0];
-                temp+= convert.str();
+                tempstr+= convert.str();
 
                 convert.str("");
                 convert.clear();
@@ -112,23 +112,32 @@ std::vector <std::string > countdown_solve ( double myints [], int target,int de
 
 
                     if (opslist[opssize][a -1 ] == add)
-                        temp += " + ";
+                        tempstr += " + ";
 
                     if (opslist[opssize][a - 1] == subtract)
-                        temp += " - ";
+                        tempstr += " - ";
 
                     if (opslist[opssize][a - 1 ] == multiply)
-                        temp += " * ";
+                        tempstr += " * ";
 
                     if (opslist[opssize][a - 1] == divide)
-                        temp += " / ";
+                        tempstr += " / ";
 
                     convert << myints[a];
-                    temp += convert.str();
+                    tempstr += convert.str();
                     convert.str("");
 
                 }
-                solutions.push_back(temp);
+
+		tempstr += " = ";
+
+		convert << temp;
+		tempstr += convert.str();
+		
+
+				
+                solutions.push_back(tempstr);
+		
 
             }
         }

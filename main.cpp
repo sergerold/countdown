@@ -6,7 +6,7 @@ int main ()
 {
 	double values [6] = {75,50,2,3,8,7};
 	int target = 812;
-	int dev =5;
+	int dev =1;
 
 	std::vector <std::string> answers = countdown_solve (values,target, dev);
 
